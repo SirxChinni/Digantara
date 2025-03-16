@@ -12,6 +12,7 @@ This project provides a set of APIs for performing various algorithms, including
   - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
 - [Accessing Logs](#accessing-logs)
 - [Examples](#examples)
+- [Using Postman](#using-postman)
 
 ## Installation
 
@@ -120,12 +121,19 @@ API calls are logged to a `logs.json` file in the backend directory. Each log en
     node server.js
     ```
 
-2. Send a POST request to the `/binary_search` endpoint:
-    ```sh
-    curl -X POST http://localhost:3000/binary_search -H "Content-Type: application/json" -d '{"array": [1, 2, 3, 4, 5], "target": 3}'
+2. Open Postman and create a new request.
+3. Set the request type to `POST`.
+4. Set the URL to `http://localhost:3000/binary_search`.
+5. Go to the `Body` tab and select `raw` and `JSON` from the dropdown.
+6. Enter the following JSON in the body:
+    ```json
+    {
+        "array": [1, 2, 3, 4, 5],
+        "target": 3
+    }
     ```
-
-3. The response will be:
+7. Click `Send`.
+8. You should receive a response with the index of the target element:
     ```json
     {
         "index": 2
@@ -140,12 +148,18 @@ API calls are logged to a `logs.json` file in the backend directory. Each log en
     node server.js
     ```
 
-2. Send a POST request to the `/quick-sort` endpoint:
-    ```sh
-    curl -X POST http://localhost:3000/quick-sort -H "Content-Type: application/json" -d '{"array": [5, 3, 8, 4, 2]}'
+2. Open Postman and create a new request.
+3. Set the request type to `POST`.
+4. Set the URL to `http://localhost:3000/quick-sort`.
+5. Go to the `Body` tab and select `raw` and `JSON` from the dropdown.
+6. Enter the following JSON in the body:
+    ```json
+    {
+        "array": [5, 3, 8, 4, 2]
+    }
     ```
-
-3. The response will be:
+7. Click `Send`.
+8. You should receive a response with the sorted array:
     ```json
     {
         "sortedArray": [2, 3, 4, 5, 8]
@@ -160,12 +174,26 @@ API calls are logged to a `logs.json` file in the backend directory. Each log en
     node server.js
     ```
 
-2. Send a POST request to the `/bfs` endpoint:
-    ```sh
-    curl -X POST http://localhost:3000/bfs -H "Content-Type: application/json" -d '{"graph": {"A": ["B", "C"], "B": ["D", "E"], "C": ["F"], "D": [], "E": ["F"], "F": []}, "start": "A"}'
+2. Open Postman and create a new request.
+3. Set the request type to `POST`.
+4. Set the URL to `http://localhost:3000/bfs`.
+5. Go to the `Body` tab and select `raw` and `JSON` from the dropdown.
+6. Enter the following JSON in the body:
+    ```json
+    {
+        "graph": {
+            "A": ["B", "C"],
+            "B": ["D", "E"],
+            "C": ["F"],
+            "D": [],
+            "E": ["F"],
+            "F": []
+        },
+        "start": "A"
+    }
     ```
-
-3. The response will be:
+7. Click `Send`.
+8. You should receive a response with the BFS traversal:
     ```json
     {
         "bfsTraversal": ["A", "B", "C", "D", "E", "F"]
