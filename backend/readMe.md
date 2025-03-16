@@ -18,7 +18,7 @@ This project provides a set of APIs for performing various algorithms, including
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/SirxChinni/Digantara
     cd Digantara
     ```
 
